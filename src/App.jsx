@@ -1,33 +1,126 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import Table from './components/Table.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const CARS = [
+    {
+        id: 1,
+        brand: "Audi",
+        models: [
+            {
+                id: 1,
+                name: "A1",
+                collection: [
+                    {
+                        id: 1,
+                        version: "Sportback",
+                        year: 2019,
+                        horsepower: 95,
+                        engine: 999
+                    },
+                    {
+                        id: 2,
+                        version: "Citycarver",
+                        year: 2019,
+                        horsepower: 95,
+                        engine: 999
+                    }
+                ]
+            },
+            {
+                id: 2,
+                name: "Q5",
+                collection: [
+                    {
+                        id: 1,
+                        version: "FY 2021",
+                        year: 2021,
+                        horsepower: 299,
+                        engine: 1984
+                    },
+                    {
+                        id: 2,
+                        version: "Sportback",
+                        year: 2021,
+                        horsepower: 299,
+                        engine: 1984
+                    }
+                ]
+            },
+            {
+                id: 3,
+                name: "TT",
+                collection: [
+                    {
+                        id: 1,
+                        version: "Coupe",
+                        year: 2021,
+                        horsepower: 197,
+                        engine: 1984
+                    },
+                    {
+                        id: 2,
+                        version: "Roadster",
+                        year: 2021,
+                        horsepower: 197,
+                        engine: 1984
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 2,
+        brand: "BMW",
+        models: [
+            {
+                id: 1,
+                name: "8 series",
+                collection: [
+                    {
+                        id: 1,
+                        version: "G1X LCI",
+                        year: 2022,
+                        horsepower: 333,
+                        engine: 2998
+                    },
+                    {
+                        id: 2,
+                        version: "G1X",
+                        year: 2019,
+                        horsepower: 340,
+                        engine: 2998
+                    }
+                ]
+            },
+            {
+                id: 2,
+                name: "X6",
+                collection: [
+                    {
+                        id: 1,
+                        version: "G06 LCI",
+                        year: 2023,
+                        horsepower: 530,
+                        engine: 4395
+                    },
+                    {
+                        id: 2,
+                        version: "G06",
+                        year: 2020,
+                        horsepower: 286,
+                        engine: 2993
+                    }
+                ]
+            }
+        ]
+    },
+];
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Table carBrands={CARS}/>
     </>
   )
 }
