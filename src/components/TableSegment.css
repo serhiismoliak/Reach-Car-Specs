@@ -1,0 +1,6 @@
+.cell__model {
+    background: red;
+    text-align: center;
+    padding: 4px;
+    box-shadow: 1px 1px rgba(76, 43, 0, 0.6)
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import TableCell from './TableCell'
-
+import TableCell from './TableCell';
+import './TableSegment.css';
 const TableSegment = ({model}) => {
     return (
         <>
@@ -8,7 +8,7 @@ const TableSegment = ({model}) => {
                 <tr key={specs.id}>
                     {index === 0 ? 
                     (<>
-                        <td rowSpan={model.collection.length}>{model.name}</td><TableCell specs={specs}/>
+                        <td className='cell__model' rowSpan={model.collection.length}>{model.name}</td><TableCell specs={specs}/>
                     </>)
                     : 
                     (<TableCell specs={specs}/>) }
