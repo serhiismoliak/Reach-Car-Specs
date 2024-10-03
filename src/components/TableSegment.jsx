@@ -1,16 +1,20 @@
 import React from 'react';
 import TableCell from './TableCell'
 
-const TableSegment = ({model}) => {
+const TableSegment = ({model, index}) => {
     return (
         <>
             { model.collection.map((specs, index) => {
                 return (
-                <tr key={specs.id}>
-                   {index === 0} ? 
-                   <td rowSpan={model.collection.length}>{model.name}</td> <TableCell specs={specs}/>
-                   : <TableCell specs={specs}/>
-                </tr>
+                    <tr key={specs.id}>
+                    {index === 0 ? 
+                     (<>
+                         <td rowSpan={model.collection.length}>{model.name}
+                         </td> <TableCell specs={specs}/>
+                     </>)
+                     : 
+                     (<TableCell specs={specs}/>) }
+                 </tr>
                 )
             })}
         </>
